@@ -18,7 +18,7 @@ useEffect(() => {
 
 
 const editBookById = async (id, newTitle) => {
-    const response = await axios.put(`http://localhost:3001/books${id}`, {
+    const response = await axios.put(`http://localhost:3001/books/${id}`, {
         title: newTitle
     });
     const updatedBooks = books.map((book) => {
@@ -31,7 +31,7 @@ const editBookById = async (id, newTitle) => {
 };
 
 const deleteBookById = async (id) => {
-        await axios.delete(`http://localhost:3001/books${id}`)
+        await axios.delete(`http://localhost:3001/books/${id}`)
        const updatedBooks = books.filter((book) => {
         return book.id !== id;
        }) 
